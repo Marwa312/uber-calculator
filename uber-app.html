@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London Uber Driver Earnings Calculator</title>
+    <link rel="stylesheet" href="uber-style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>London Uber Driver Earnings Calculator</h1>
+            <p>Calculate your potential earnings as an Uber driver in London</p>
+        </header>
+        
+        <main>
+            <div class="calculator">
+                <form id="earningsForm">
+                    <!-- Step 1: Hours Worked -->
+                    <div class="input-group">
+                        <label for="hours">Hours worked per week</label>
+                        <div class="slider-container">
+                            <input type="range" id="hours" min="20" max="90" value="40" class="slider">
+                            <div class="slider-value" id="hoursValue">40 hours</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Work Times -->
+                    <div class="input-group">
+                        <label>Main work times (select all that apply)</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="earlyMorning" value="1.1">
+                                <span class="checkmark"></span>
+                                Early mornings (1.1x)
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="afternoon" value="1.0" checked>
+                                <span class="checkmark"></span>
+                                Afternoons (1.0x)
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="evening" value="1.0">
+                                <span class="checkmark"></span>
+                                Evenings (1.0x)
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="lateNight" value="1.2">
+                                <span class="checkmark"></span>
+                                Late nights (1.2x)
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Weekend Work -->
+                    <div class="input-group">
+                        <label>Do you work weekends?</label>
+                        <div class="toggle-group">
+                            <label class="toggle-label">
+                                <input type="radio" name="weekend" value="no" checked>
+                                <span class="toggle-option">No (1.0x)</span>
+                            </label>
+                            <label class="toggle-label">
+                                <input type="radio" name="weekend" value="yes">
+                                <span class="toggle-option">Yes (1.1x)</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4: Car Category -->
+                    <div class="input-group">
+                        <label>Car category</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="carCategory" value="normal" checked>
+                                <span class="radio-option">
+                                    <strong>Normal</strong> (Prius, Kia Niro) - £230/week
+                                </span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="carCategory" value="executive">
+                                <span class="radio-option">
+                                    <strong>Executive</strong> (Mercedes E Class) - £300/week
+                                </span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="carCategory" value="seater">
+                                <span class="radio-option">
+                                    <strong>7 Seater</strong> (Hyundai Santa Fe) - £270/week
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="estimate-btn">Calculate My Earnings</button>
+                </form>
+                
+                <div class="result-area" id="resultArea">
+                    <p>Your earnings estimate will appear here</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="uber-main.js"></script>
+</body>
+</html>

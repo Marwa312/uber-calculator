@@ -1,0 +1,328 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+header p {
+    color: #6c757d;
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    position: relative;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.calculator {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border: 1px solid #dee2e6;
+}
+
+.input-group {
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 18px 20px;
+    border: 2px solid #e1e1e1;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #fafafa;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #000;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
+    transform: translateY(-1px);
+}
+
+input[type="text"]:hover {
+    border-color: #ccc;
+    background-color: white;
+}
+
+.estimate-btn {
+    width: 100%;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.estimate-btn:hover {
+    background: #34495e;
+}
+
+.result-area {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid #dee2e6;
+}
+
+.result-area p {
+    color: #6c757d;
+    font-style: italic;
+    margin: 0;
+}
+
+.result-area div {
+    margin-bottom: 10px;
+}
+
+.result-area div:last-child {
+    margin-bottom: 0;
+}
+
+/* Slider Styles */
+.slider-container {
+    position: relative;
+    margin-top: 10px;
+}
+
+.slider {
+    width: 100%;
+    height: 10px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(108,117,125,0.3) 0%, rgba(233,236,239,0.5) 100%);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    box-shadow: inset 0 2px 4px rgba(108,117,125,0.2);
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(44,62,80,0.4);
+    transition: all 0.3s ease;
+    border: 3px solid white;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    background: #34495e;
+}
+
+.slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #000;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.slider-value {
+    text-align: center;
+    font-weight: 600;
+    color: #000;
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+/* Checkbox and Radio Button Styles */
+.checkbox-group, .radio-group, .toggle-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.checkbox-label, .radio-label, .toggle-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px 15px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    background: #f8f9fa;
+    margin-bottom: 8px;
+}
+
+.checkbox-label:hover, .radio-label:hover, .toggle-label:hover {
+    background: #e9ecef;
+}
+
+.checkbox-label input, .radio-label input, .toggle-label input {
+    margin-right: 12px;
+    transform: scale(1.2);
+}
+
+.checkbox-label input:checked + .checkmark,
+.radio-label input:checked + .radio-option,
+.toggle-label input:checked + .toggle-option {
+    color: #000;
+    font-weight: 600;
+}
+
+.checkbox-label:has(input:checked),
+.radio-label:has(input:checked),
+.toggle-label:has(input:checked) {
+    border-color: #2c3e50;
+    background: #e9ecef;
+}
+
+.checkmark {
+    font-weight: 500;
+}
+
+.radio-option, .toggle-option {
+    font-weight: 500;
+}
+
+/* Toggle group specific styling */
+.toggle-group {
+    flex-direction: row;
+    gap: 8px;
+}
+
+.toggle-label {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+}
+
+.toggle-label input {
+    margin-right: 8px;
+}
+
+/* Share Button Styles */
+.share-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.9rem;
+    min-width: 120px;
+    margin: 5px;
+}
+
+.whatsapp-btn {
+    background: #25D366;
+    color: white;
+}
+
+.whatsapp-btn:hover {
+    background: #128C7E;
+}
+
+.email-btn {
+    background: #007bff;
+    color: white;
+}
+
+.email-btn:hover {
+    background: #0056b3;
+}
+
+.copy-btn {
+    background: #6c757d;
+    color: white;
+}
+
+.copy-btn:hover {
+    background: #495057;
+}
+
+/* Mobile-first responsive design */
+@media (min-width: 768px) {
+    .container {
+        max-width: 500px;
+    }
+    
+    h1 {
+        font-size: 3rem;
+    }
+    
+    .calculator {
+        padding: 60px 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .calculator {
+        padding: 30px 25px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .share-btn {
+        min-width: 100px;
+        padding: 10px 16px;
+        font-size: 0.8rem;
+    }
+    
+    .checkbox-group, .radio-group {
+        gap: 8px;
+    }
+    
+    .checkbox-label, .radio-label, .toggle-label {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+}
