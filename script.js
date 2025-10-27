@@ -121,10 +121,10 @@ function initializeApp() {
             
             <div style="background: white; padding: 20px; border-radius: 10px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                 <div style="color: #000; font-weight: 600; font-size: 1.1rem; margin-bottom: 10px;">
-                    Gross Earnings: £${grossHourlyRounded}/hour
+                    Gross Earnings: £${grossHourlyRounded}/hour (£${grossWeeklyRounded}/week)
                 </div>
                 <div style="color: #6c757d; font-size: 0.9rem; margin-bottom: 8px;">
-                    Based on: ${hours} hours/week, ${workTimeMultiplier.toFixed(2)}x work time multiplier, ${weekendMultiplier}x weekend multiplier, ${carMultiplier}x car multiplier
+                    Based on: ${hours} hours/week, ${getWorkTimeDescription(workTimeCheckboxes)}, ${weekendWork ? 'weekend work' : 'weekdays only'}, ${getCarDescription(carCategory)}
                 </div>
             </div>
             
@@ -145,20 +145,46 @@ function initializeApp() {
             <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                 <div style="color: #000; font-weight: 600; margin-bottom: 15px; text-align: center;">Share Your Results</div>
                 <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-                    <button onclick="shareWhatsApp('${shareMessage}', '${shareUrl}')" class="share-btn whatsapp-btn">
-                        WhatsApp
+                    <button onclick="shareWhatsApp('${shareMessage}', '${shareUrl}')" class="share-btn whatsapp-btn" title="Share on WhatsApp">
+                        📱
                     </button>
-                    <button onclick="shareEmail('${shareMessage}', '${shareUrl}')" class="share-btn email-btn">
-                        Email
+                    <button onclick="shareEmail('${shareMessage}', '${shareUrl}')" class="share-btn email-btn" title="Share via Email">
+                        ✉️
                     </button>
-                    <button onclick="copyLink('${shareUrl}')" class="share-btn copy-btn">
-                        Copy Link
+                    <button onclick="copyLink('${shareUrl}')" class="share-btn copy-btn" title="Copy Link">
+                        📋
                     </button>
                 </div>
             </div>
         `;
         
         console.log(`Earnings calculated: £${netWeeklyRounded}/week net`);
+    }
+    
+    // Helper function to get work time description
+    function getWorkTimeDescription(checkboxes) {
+        const selectedTimes = [];
+        checkboxes.forEach(checkbox => {
+            if (checkbox.id === 'earlyMorning') selectedTimes.push('early mornings');
+            if (checkbox.id === 'afternoon') selectedTimes.push('afternoons');
+            if (checkbox.id === 'evening') selectedTimes.push('evenings');
+            if (checkbox.id === 'lateNight') selectedTimes.push('late nights');
+        });
+        
+        if (selectedTimes.length === 0) return 'no specific times';
+        if (selectedTimes.length === 1) return selectedTimes[0];
+        if (selectedTimes.length === 2) return selectedTimes.join(' & ');
+        return selectedTimes.slice(0, -1).join(', ') + ' & ' + selectedTimes[selectedTimes.length - 1];
+    }
+    
+    // Helper function to get car description
+    function getCarDescription(category) {
+        const descriptions = {
+            normal: 'normal car',
+            executive: 'executive car',
+            seater: '7-seater car'
+        };
+        return descriptions[category] || 'normal car';
     }
 }
 
