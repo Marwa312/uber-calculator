@@ -274,15 +274,40 @@ input[type="text"]:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .whatsapp-btn {
     background: #25D366;
     color: white;
+    font-size: 0; /* Hide text, show only icon */
 }
 
 .whatsapp-btn:hover {
     background: #128C7E;
+}
+
+.whatsapp-btn::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 50%;
+    position: relative;
+    display: block;
+    border: 2px solid #25D366;
+}
+
+.whatsapp-btn::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #25D366;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .email-btn {
@@ -297,10 +322,17 @@ input[type="text"]:hover {
 .copy-btn {
     background: #6c757d;
     color: white;
+    font-size: 0; /* Hide text, show only icon */
 }
 
 .copy-btn:hover {
     background: #495057;
+}
+
+.copy-btn::before {
+    content: '🔗';
+    font-size: 1.2rem;
+    display: block;
 }
 
 /* Mobile-first responsive design */

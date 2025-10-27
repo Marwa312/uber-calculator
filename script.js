@@ -50,10 +50,14 @@ function initializeApp() {
             }
         });
         
+        // Check if at least one work time is selected
+        if (workTimes.length === 0) {
+            resultArea.innerHTML = '<p style="color: #dc3545;">Please select at least one work time</p>';
+            return;
+        }
+        
         // Calculate average work time multiplier
-        const workTimeMultiplier = workTimes.length > 0 
-            ? workTimes.reduce((sum, val) => sum + val, 0) / workTimes.length 
-            : 1.0;
+        const workTimeMultiplier = workTimes.reduce((sum, val) => sum + val, 0) / workTimes.length;
         
         // Get weekend work with validation
         const weekendRadio = document.querySelector('input[name="weekend"]:checked');
