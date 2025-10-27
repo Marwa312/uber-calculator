@@ -179,27 +179,19 @@ input[type="text"]:hover {
 }
 
 /* Checkbox and Radio Button Styles */
-.checkbox-group, .radio-group, .toggle-group {
+.radio-group, .toggle-group {
     display: flex;
     flex-direction: column;
     gap: 12px;
     margin-top: 10px;
 }
 
-/* Work times 2x2 grid layout */
+/* Work times 2x2 grid layout - ALWAYS */
 .checkbox-group {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
     margin-top: 10px;
-}
-
-/* Mobile: stack vertically */
-@media (max-width: 768px) {
-    .checkbox-group {
-        grid-template-columns: 1fr;
-        gap: 8px;
-    }
 }
 
 .checkbox-label, .radio-label, .toggle-label {
@@ -280,17 +272,14 @@ input[type="text"]:hover {
 .whatsapp-btn {
     background: #25D366;
     color: white;
-    font-size: 0; /* Hide text, show only icon */
 }
 
 .whatsapp-btn:hover {
     background: #128C7E;
 }
 
-.whatsapp-btn::before {
-    content: '💬';
-    font-size: 1.2rem;
-    display: block;
+.whatsapp-btn i {
+    font-size: 1.4rem;
 }
 
 .email-btn {
@@ -305,17 +294,10 @@ input[type="text"]:hover {
 .copy-btn {
     background: #6c757d;
     color: white;
-    font-size: 0; /* Hide text, show only icon */
 }
 
 .copy-btn:hover {
     background: #495057;
-}
-
-.copy-btn::before {
-    content: '🔗';
-    font-size: 1.2rem;
-    display: block;
 }
 
 /* Mobile-first responsive design */

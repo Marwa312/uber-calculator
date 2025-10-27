@@ -134,7 +134,7 @@ function initializeApp() {
             
             <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 15px;">
                 <div style="color: #000; font-weight: 600; margin-bottom: 10px;">Weekly Costs:</div>
-                <div style="color: #6c757d; font-size: 0.9rem; margin-bottom: 5px;">• Vehicle: £${vehicleCost}</div>
+                <div style="color: #6c757d; font-size: 0.9rem; margin-bottom: 5px;">• Vehicle: £${vehicleCost} (including insurance) ${getCarLink(carCategory)}</div>
                 <div style="color: #6c757d; font-size: 0.9rem; margin-bottom: 5px;">• Fuel: £${fuelCost.toFixed(2)}</div>
                 <div style="color: #6c757d; font-size: 0.9rem; margin-bottom: 10px;">• Cleaning, parking & data: £${otherCosts}</div>
                 <div style="color: #000; font-weight: 600; border-top: 1px solid #dee2e6; padding-top: 8px;">Total Weekly Costs: £${totalWeeklyCost.toFixed(2)}</div>
@@ -150,13 +150,13 @@ function initializeApp() {
                 <div style="color: #000; font-weight: 600; margin-bottom: 15px; text-align: center;">Share Your Results</div>
                 <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
                     <button onclick="shareWhatsApp('${shareMessage}', '${shareUrl}')" class="share-btn whatsapp-btn" title="Share on WhatsApp">
-                        📱
+                        <i class="fab fa-whatsapp"></i>
                     </button>
                     <button onclick="shareEmail('${shareMessage}', '${shareUrl}')" class="share-btn email-btn" title="Share via Email">
-                        ✉️
+                        <i class="fas fa-envelope"></i>
                     </button>
                     <button onclick="copyLink('${shareUrl}')" class="share-btn copy-btn" title="Copy Link">
-                        📋
+                        <i class="fas fa-link"></i>
                     </button>
                 </div>
             </div>
@@ -189,6 +189,16 @@ function initializeApp() {
             seater: '7-seater car'
         };
         return descriptions[category] || 'normal car';
+    }
+    
+    // Helper function to get car rental links
+    function getCarLink(category) {
+        const links = {
+            normal: '<a href="https://ottocar.co.uk/cars?branch_region=London+%26+South+East&plan=RENTAL&uberEligibility=Uber+X" target="_blank" style="color: #007bff; text-decoration: none;">View rentals →</a>',
+            executive: '<a href="https://fleeto.co.uk/car-listing/mercedes-benz-e300e/" target="_blank" style="color: #007bff; text-decoration: none;">View rentals →</a>',
+            seater: '<a href="https://www.splend.com/en-GB/vehicles/?vehicles_gb%5BrefinementList%5D%5Buber_elligibility%5D%5B0%5D=uber-xl&vehicles_gb%5BrefinementList%5D%5Blocations%5D%5B0%5D=London" target="_blank" style="color: #007bff; text-decoration: none;">View rentals →</a>'
+        };
+        return links[category] || '';
     }
 }
 
