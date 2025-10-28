@@ -119,7 +119,7 @@ function initializeApp() {
         
         // Display results
         resultArea.innerHTML = `
-            <div style="color: #28a745; font-weight: 600; font-size: 1.3rem; margin-bottom: 15px;">
+            <div style="color: #21398F; font-weight: 600; font-size: 1.3rem; margin-bottom: 15px;">
                 Your Earnings Estimate
             </div>
             
@@ -132,6 +132,12 @@ function initializeApp() {
                 </div>
             </div>
             
+            <div style="background: #21398F; color: white; padding: 20px; border-radius: 10px; text-align: center; margin-bottom: 20px;">
+                <div style="font-size: 1.2rem; font-weight: 600; margin-bottom: 10px;">Net Weekly: £${netWeeklyRounded}</div>
+                <div style="font-size: 1rem; margin-bottom: 5px;">Net Hourly: £${netHourlyRounded}</div>
+                <div style="font-size: 1rem;">Net Monthly: £${netMonthlyRounded}</div>
+            </div>
+            
             <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 15px;">
                 <div style="color: #000; font-weight: 600; margin-bottom: 10px;">Weekly Costs:</div>
                 <div style="color: #6c757d; font-size: 0.9rem; margin-bottom: 5px;">• Vehicle: £${vehicleCost} (including insurance) ${getCarLink(carCategory)}</div>
@@ -140,10 +146,8 @@ function initializeApp() {
                 <div style="color: #000; font-weight: 600; border-top: 1px solid #dee2e6; padding-top: 8px;">Total Weekly Costs: £${totalWeeklyCost.toFixed(2)}</div>
             </div>
             
-            <div style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; padding: 20px; border-radius: 10px; text-align: center; margin-bottom: 20px;">
-                <div style="font-size: 1.2rem; font-weight: 600; margin-bottom: 10px;">Net Weekly: £${netWeeklyRounded}</div>
-                <div style="font-size: 1rem; margin-bottom: 5px;">Net Hourly: £${netHourlyRounded}</div>
-                <div style="font-size: 1rem;">Net Monthly: £${netMonthlyRounded}</div>
+            <div style="text-align: center; margin-bottom: 10px;">
+                <button type="button" onclick="document.getElementById('hours').focus(); window.scrollTo({ top: 0, behavior: 'smooth' });" style="background: none; border: none; color: #21398F; text-decoration: underline; cursor: pointer; font-weight: 600;">Edit selections</button>
             </div>
             
             <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">

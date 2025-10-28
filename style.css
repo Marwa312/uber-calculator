@@ -26,30 +26,36 @@ body {
 
 header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 0;
+    background: #21398F;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 0;
 }
 
 header p {
-    color: #6c757d;
-    font-style: italic;
-    font-size: 1.1rem;
-    margin-top: 10px;
+    color: #E9EEFF;
+    font-size: 0.95rem;
+    font-weight: 300;
+    margin-top: 0;
     position: relative;
 }
 
 h1 {
-    color: #2c3e50;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: 300;
+    font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, sans-serif;
+    margin-bottom: 0;
 }
 
 .calculator {
     background: white;
     padding: 40px 30px;
-    border-radius: 8px;
+    border-radius: 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     border: 1px solid #dee2e6;
+    border-top: none;
 }
 
 .input-group {
@@ -61,7 +67,16 @@ label {
     margin-bottom: 8px;
     font-weight: 600;
     color: #333;
-    font-size: 0.9rem;
+    font-size: 1rem;
+}
+
+/* Slightly larger label for Car category only */
+.input-group label + .radio-group {
+    /* no-op to anchor selector scope */
+}
+.input-group label + .radio-group,
+.input-group:has(.radio-group) > label {
+    font-size: 1.05rem;
 }
 
 input[type="text"] {
@@ -89,7 +104,7 @@ input[type="text"]:hover {
 
 .estimate-btn {
     width: 100%;
-    background: #2c3e50;
+    background: #00703C;
     color: white;
     border: none;
     padding: 15px;
@@ -101,14 +116,14 @@ input[type="text"]:hover {
 }
 
 .estimate-btn:hover {
-    background: #34495e;
+    background: #005c32;
 }
 
 .result-area {
     background: #f8f9fa;
     padding: 20px;
     border-radius: 5px;
-    text-align: center;
+    text-align: left;
     border: 1px solid #dee2e6;
 }
 
@@ -136,7 +151,7 @@ input[type="text"]:hover {
     width: 100%;
     height: 10px;
     border-radius: 10px;
-    background: linear-gradient(135deg, rgba(108,117,125,0.3) 0%, rgba(233,236,239,0.5) 100%);
+    background: linear-gradient(135deg, rgba(33,57,143,0.35) 0%, rgba(233,236,239,0.6) 100%);
     outline: none;
     -webkit-appearance: none;
     appearance: none;
@@ -149,7 +164,7 @@ input[type="text"]:hover {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    background: #21398F;
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(44,62,80,0.4);
     transition: all 0.3s ease;
@@ -157,14 +172,14 @@ input[type="text"]:hover {
 }
 
 .slider::-webkit-slider-thumb:hover {
-    background: #34495e;
+    background: #1b2f78;
 }
 
 .slider::-moz-range-thumb {
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background: #000;
+    background: #21398F;
     cursor: pointer;
     border: none;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
@@ -283,12 +298,12 @@ input[type="text"]:hover {
 }
 
 .email-btn {
-    background: #007bff;
+    background: #21398F;
     color: white;
 }
 
 .email-btn:hover {
-    background: #0056b3;
+    background: #1b2f78;
 }
 
 .copy-btn {
