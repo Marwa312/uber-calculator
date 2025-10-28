@@ -67,7 +67,7 @@ label {
     margin-bottom: 8px;
     font-weight: 600;
     color: #333;
-    font-size: 1rem;
+    font-size: 1.08rem;
 }
 
 /* Slightly larger label for Car category only */
@@ -259,8 +259,8 @@ input[type="text"]:hover {
 
 .toggle-label {
     flex: 1;
-    text-align: center;
-    justify-content: center;
+    text-align: left;
+    justify-content: flex-start;
 }
 
 .toggle-label input {
@@ -327,6 +327,22 @@ input[type="text"]:hover {
     
     .calculator {
         padding: 60px 50px;
+    }
+}
+
+/* Laptop/desktop: same layout, just larger scale */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 800px; /* wider but still centered */
+    }
+    body {
+        font-size: 17px; /* subtle up-scale without changing layout */
+    }
+    .calculator {
+        padding: 50px 40px; /* proportionally larger spacing */
+    }
+    .result-area {
+        padding: 24px; /* slightly larger padding for readability */
     }
 }
 
