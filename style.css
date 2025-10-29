@@ -373,4 +373,16 @@ input[type="text"]:hover {
         padding: 10px 12px;
         font-size: 0.9rem;
     }
+
+    /* Center net block text on mobile and equalize spacing */
+    .net-block {
+        text-align: center !important;
+    }
+    .net-block .net-weekly,
+    .net-block .net-hourly {
+        margin-bottom: 6px !important;
+    }
+    .net-block .net-monthly {
+        margin-bottom: 0 !important;
+    }
 }
