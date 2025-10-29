@@ -119,39 +119,39 @@ function initializeApp() {
         
         // Display results
         resultArea.innerHTML = `
-            <div style="color: #21398F; font-weight: 600; font-size: 1.3rem; margin-bottom: 15px;">
+            <div style="color: #21398F; font-weight: 600; font-size: 1.2rem; margin-bottom: 12px;">
                 Your Earnings Estimate
             </div>
             
-            <div style="background: white; padding: 20px; border-radius: 10px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <div style="color: #000; font-weight: 600; font-size: 1.1rem; margin-bottom: 10px;">
+            <div style="background: white; padding: 18px; border-radius: 10px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                <div style="color: #000; font-weight: 600; font-size: 1rem; margin-bottom: 8px;">
                     Gross Earnings: £${grossHourlyRounded}/hour (£${grossWeeklyRounded}/week)
                 </div>
-                <div style="color: #6c757d; font-size: 0.9rem; margin-bottom: 8px;">
+                <div style="color: #6c757d; font-size: 0.9rem; line-height: 1.4;">
                     Based on: ${hours} hours/week, ${getWorkTimeDescription(workTimeCheckboxes)}, ${weekendWork ? 'weekend work' : 'weekdays only'}, ${getCarDescription(carCategory)}
                 </div>
             </div>
             
-            <div style="background: #21398F; color: white; padding: 20px; border-radius: 10px; text-align: center; margin-bottom: 20px;">
-                <div style="font-size: 1.2rem; font-weight: 600; margin-bottom: 10px;">Net Weekly: £${netWeeklyRounded}</div>
-                <div style="font-size: 1rem; margin-bottom: 5px;">Net Hourly: £${netHourlyRounded}</div>
-                <div style="font-size: 1rem;">Net Monthly: £${netMonthlyRounded}</div>
+            <div style="background: #f8f9fa; padding: 18px; border-radius: 10px; margin-bottom: 12px;">
+                <div style="color: #000; font-weight: 600; margin-bottom: 8px;">Weekly Costs</div>
+                <div style="color: #6c757d; font-size: 0.9rem; margin-bottom: 4px;">• Vehicle: £${vehicleCost} (including insurance) ${getCarLink(carCategory)}</div>
+                <div style="color: #6c757d; font-size: 0.9rem; margin-bottom: 4px;">• Fuel: £${fuelCost.toFixed(2)}</div>
+                <div style="color: #6c757d; font-size: 0.9rem; margin-bottom: 8px;">• Cleaning, parking & data: £${otherCosts}</div>
+                <div style="color: #000; font-weight: 600; border-top: 1px solid #dee2e6; padding-top: 6px;">Total Weekly Costs: £${totalWeeklyCost.toFixed(2)}</div>
             </div>
             
-            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 15px;">
-                <div style="color: #000; font-weight: 600; margin-bottom: 10px;">Weekly Costs:</div>
-                <div style="color: #6c757d; font-size: 0.9rem; margin-bottom: 5px;">• Vehicle: £${vehicleCost} (including insurance) ${getCarLink(carCategory)}</div>
-                <div style="color: #6c757d; font-size: 0.9rem; margin-bottom: 5px;">• Fuel: £${fuelCost.toFixed(2)}</div>
-                <div style="color: #6c757d; font-size: 0.9rem; margin-bottom: 10px;">• Cleaning, parking & data: £${otherCosts}</div>
-                <div style="color: #000; font-weight: 600; border-top: 1px solid #dee2e6; padding-top: 8px;">Total Weekly Costs: £${totalWeeklyCost.toFixed(2)}</div>
+            <div style="background: #21398F; color: white; padding: 18px; border-radius: 10px; text-align: left; margin-bottom: 16px;">
+                <div style="font-size: 1.1rem; font-weight: 600; margin-bottom: 6px;">Net Weekly: £${netWeeklyRounded}</div>
+                <div style="font-size: 0.95rem; margin-bottom: 2px;">Net Hourly: £${netHourlyRounded}</div>
+                <div style="font-size: 0.95rem;">Net Monthly: £${netMonthlyRounded}</div>
             </div>
             
             <div style="text-align: center; margin-bottom: 10px;">
                 <button type="button" onclick="document.getElementById('hours').focus(); window.scrollTo({ top: 0, behavior: 'smooth' });" style="background: none; border: none; color: #21398F; text-decoration: underline; cursor: pointer; font-weight: 600;">Edit selections</button>
             </div>
             
-            <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <div style="color: #000; font-weight: 600; margin-bottom: 15px; text-align: center;">Share Your Results</div>
+            <div style="background: white; padding: 18px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                <div style="color: #000; font-weight: 600; margin-bottom: 12px; text-align: center;">Share Your Results</div>
                 <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
                     <button onclick="shareWhatsApp('${shareMessage}', '${shareUrl}')" class="share-btn whatsapp-btn" title="Share on WhatsApp">
                         <i class="fab fa-whatsapp"></i>
