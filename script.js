@@ -132,18 +132,18 @@ function initializeApp() {
                 </div>
             </div>
             
-            <div class="net-block" style="background: #21398F; color: white; padding: 18px; border-radius: 10px; text-align: left; margin-bottom: 16px;">
-                <div class="net-weekly" style="font-size: 1.1rem; font-weight: 600; margin-bottom: 6px;">Net Weekly: £${netWeeklyRounded}</div>
-                <div class="net-hourly" style="font-size: 0.95rem; margin-bottom: 6px;">Net Hourly: £${netHourlyRounded}</div>
-                <div class="net-monthly" style="font-size: 0.95rem;">Net Monthly: £${netMonthlyRounded}</div>
-            </div>
-            
             <div style="background: #f8f9fa; padding: 18px; border-radius: 10px; margin-bottom: 12px;">
                 <div style="color: #000; font-weight: 600; margin-bottom: 8px;">Weekly Costs</div>
                 <div style="color: #6c757d; font-size: 0.9rem; margin-bottom: 4px;">• Vehicle: £${vehicleCost} (including insurance) ${getCarLink(carCategory)}</div>
                 <div style="color: #6c757d; font-size: 0.9rem; margin-bottom: 4px;">• Fuel: £${fuelCost.toFixed(2)}</div>
                 <div style="color: #6c757d; font-size: 0.9rem; margin-bottom: 8px;">• Cleaning, parking & data: £${otherCosts}</div>
                 <div style="color: #000; font-weight: 600; border-top: 1px solid #dee2e6; padding-top: 6px;">Total Weekly Costs: £${totalWeeklyCost.toFixed(2)}</div>
+            </div>
+            
+            <div class="net-block" style="background: #21398F; color: white; padding: 18px; border-radius: 10px; text-align: left; margin-bottom: 16px;">
+                <div class="net-weekly" style="font-size: 1.1rem; font-weight: 600; margin-bottom: 6px;">Net Weekly: £${netWeeklyRounded}</div>
+                <div class="net-hourly" style="font-size: 0.95rem; margin-bottom: 6px;">Net Hourly: £${netHourlyRounded}</div>
+                <div class="net-monthly" style="font-size: 0.95rem;">Net Monthly: £${netMonthlyRounded}</div>
             </div>
             
             <div style="text-align: center; margin-bottom: 10px;">
