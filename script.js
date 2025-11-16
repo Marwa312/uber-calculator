@@ -124,26 +124,52 @@ function initializeApp() {
             </div>
             
             <div style="background: white; padding: 18px; border-radius: 10px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-                <div style="color: #000; font-weight: 600; font-size: 1rem; margin-bottom: 8px;">
-                    Gross Earnings: £${grossHourlyRounded}/hour (£${grossWeeklyRounded}/week)
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+                    <span style="color: #000; font-weight: 600; font-size: 1rem;">Gross Hourly</span>
+                    <span style="color: #000; font-weight: 600; font-size: 1rem;">£${grossHourlyRounded}</span>
                 </div>
-                <div style="color: #6c757d; font-size: 0.9rem; line-height: 1.4;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                    <span style="color: #000; font-weight: 600; font-size: 1rem;">Gross Weekly</span>
+                    <span style="color: #000; font-weight: 600; font-size: 1rem;">£${grossWeeklyRounded}</span>
+                </div>
+                <div style="color: #6c757d; font-size: 0.9rem; line-height: 1.4; margin-top: 8px; padding-top: 8px; border-top: 1px solid #e9ecef;">
                     Based on: ${hours} hours/week, ${getWorkTimeDescription(workTimeCheckboxes)}, ${weekendWork ? 'weekend work' : 'weekdays only'}, ${getCarDescription(carCategory)}
                 </div>
             </div>
             
             <div style="background: #f8f9fa; padding: 18px; border-radius: 10px; margin-bottom: 12px;">
                 <div style="color: #000; font-weight: 600; margin-bottom: 8px;">Weekly Costs</div>
-                <div style="color: #6c757d; font-size: 0.9rem; margin-bottom: 4px;">• Vehicle: £${vehicleCost} (including insurance) ${getCarLink(carCategory)}</div>
-                <div style="color: #6c757d; font-size: 0.9rem; margin-bottom: 4px;">• Fuel: £${fuelCost.toFixed(2)}</div>
-                <div style="color: #6c757d; font-size: 0.9rem; margin-bottom: 8px;">• Cleaning, parking & data: £${otherCosts}</div>
-                <div style="color: #000; font-weight: 600; border-top: 1px solid #dee2e6; padding-top: 6px;">Total Weekly Costs: £${totalWeeklyCost.toFixed(2)}</div>
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+                    <span style="color: #6c757d; font-size: 0.9rem;">Vehicle with insurance ${getCarLink(carCategory)}</span>
+                    <span style="color: #6c757d; font-size: 0.9rem; font-weight: 600;">£${vehicleCost}</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+                    <span style="color: #6c757d; font-size: 0.9rem;">Fuel</span>
+                    <span style="color: #6c757d; font-size: 0.9rem; font-weight: 600;">£${fuelCost.toFixed(2)}</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                    <span style="color: #6c757d; font-size: 0.9rem;">Cleaning, parking & data</span>
+                    <span style="color: #6c757d; font-size: 0.9rem; font-weight: 600;">£${otherCosts}</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid #dee2e6; padding-top: 6px; margin-top: 8px;">
+                    <span style="color: #000; font-weight: 600;">Total Weekly Costs</span>
+                    <span style="color: #000; font-weight: 600;">£${totalWeeklyCost.toFixed(2)}</span>
+                </div>
             </div>
             
             <div class="net-block" style="background: #21398F; color: white; padding: 18px; border-radius: 10px; text-align: left; margin-bottom: 16px;">
-                <div class="net-weekly" style="font-size: 1.1rem; font-weight: 600; margin-bottom: 6px;">Net Weekly: £${netWeeklyRounded}</div>
-                <div class="net-hourly" style="font-size: 0.95rem; margin-bottom: 6px;">Net Hourly: £${netHourlyRounded}</div>
-                <div class="net-monthly" style="font-size: 0.95rem;">Net Monthly: £${netMonthlyRounded}</div>
+                <div class="net-weekly" style="display: flex; justify-content: space-between; align-items: baseline; font-size: 1.1rem; font-weight: 600; margin-bottom: 6px;">
+                    <span>Net Weekly</span>
+                    <span>£${netWeeklyRounded}</span>
+                </div>
+                <div class="net-hourly" style="display: flex; justify-content: space-between; align-items: baseline; font-size: 0.95rem; margin-bottom: 6px;">
+                    <span>Net Hourly</span>
+                    <span>£${netHourlyRounded}</span>
+                </div>
+                <div class="net-monthly" style="display: flex; justify-content: space-between; align-items: baseline; font-size: 0.95rem;">
+                    <span>Net Monthly</span>
+                    <span>£${netMonthlyRounded}</span>
+                </div>
             </div>
             
             <div style="text-align: center; margin-bottom: 10px;">
@@ -152,7 +178,7 @@ function initializeApp() {
             
             <div style="background: white; padding: 18px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
                 <div style="color: #000; font-weight: 600; margin-bottom: 12px; text-align: center;">Share Your Results</div>
-                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: nowrap;">
                     <button onclick="shareWhatsApp('${shareMessage}', '${shareUrl}')" class="share-btn whatsapp-btn" title="Share on WhatsApp">
                         <i class="fab fa-whatsapp"></i>
                     </button>
